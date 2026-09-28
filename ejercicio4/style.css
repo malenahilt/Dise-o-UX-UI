@@ -1,0 +1,30 @@
+/*css del ejercicio 13 del bloque 2*/
+.body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px;
+}
+
+.button{
+    background-color: rgb(197, 197, 197);
+    padding: 15px 30px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; transform: 0.2s ease;
+}
+
+.input textarea{
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: border-color 0.3s ease; box-shadow: 0.2s ease;
+}
+.input :focus textarea:focus{
+    border-color: rgb(161, 177, 248);
+    box-shadow: 0 0 5px;
+}
+
+.button :hover{
+    background-color: rgb(148, 146, 146);
+}
+.button :active{
+    transform: scale(1);
+    background-color: blue;
+}

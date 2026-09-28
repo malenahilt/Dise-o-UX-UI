@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  padding: 30px;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a5276;
+  padding: 15px 20px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+/* Checkbox oculto: se esconde visualmente pero sigue siendo accesible por teclado */
+.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* Ícono hamburguesa (el label) */
+.menu-icono {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 8px;
+}
+
+.menu-icono::before {
+  content: "☰";
+}
+
+/* Cuando el checkbox está tildado, el ícono cambia a una X */
+.menu-toggle:checked ~ .menu-icono::before {
+  content: "X";
+}
+
+/* Indicador de foco para quien navega con teclado */
+.menu-toggle:focus-visible ~ .menu-icono {
+  outline: 2px solid #a9cce3;
+  outline-offset: 2px;
+}
+
+/* Menú: colapsado por defecto (mobile first) */
+.menu {
+  flex-basis: 100%;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 0.4s ease, visibility 0s linear 0.4s;
+}
+
+/* Menú abierto: se despliega cuando el checkbox está tildado */
+.menu-toggle:checked ~ .menu {
+  max-height: 300px;
+  visibility: visible;
+  transition: max-height 0.4s ease, visibility 0s;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 0;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu a:hover {
+  color: #a9cce3;
+}
+
+/* Pantallas grandes: menú siempre visible en horizontal, sin ícono */
+@media (min-width: 769px) {
+  .menu-icono {
+    display: none;
+  }
+
+  .menu {
+    flex-basis: auto;
+    max-height: none;
+    overflow: visible;
+    visibility: visible;
+  }
+
+  .menu ul {
+    display: flex;
+    gap: 25px;
+  }
+
+  .menu a {
+    padding: 0;
+    border-top: none;
+  }
+}

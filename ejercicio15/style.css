@@ -1,0 +1,101 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.layout{
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 70px 1fr 50px;
+    grid-template-areas:
+    "header   header"
+    "sidebar   contenido"
+    "footer   footer";
+    min-height: 100vh;
+    gap: 2px;
+}
+
+.header{
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    background-color: #4f94be;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    padding: 25px 20px;
+    background-color: #d6eaf8;
+}
+
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar a{
+    color: #1a5276;
+}
+
+.footer{
+    grid-area: footer;
+    padding: 15px;
+    background-color: rgba(44, 44, 216, 0.842);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contenido{
+    grid-area: contenido;
+    padding: 30px;
+    background-color: #f4f6f7;
+}
+
+/*con medida de 760px*/
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header"
+      "contenido"
+      "sidebar"
+      "footer";
+  }
+
+  .sidebar {
+    padding: 20px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* ===== BREAKPOINT 2: Celulares (480px) ===== */
+@media (max-width: 480px) {
+  .header {
+    padding: 0 15px;
+    font-size: 1.1em;
+  }
+
+  .contenido {
+    padding: 20px 15px;
+  }
+
+  .sidebar {
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 0.8em;
+    padding: 12px 10px;
+    text-align: center;
+  }
+}

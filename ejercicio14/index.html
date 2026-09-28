@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Css y temas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Ejemplo de cambio de modos</h1>
+        <button id="cambio-modo" class="boton">modo oscuro</button>
+    </header>
+
+    <main class="contenido">
+        <div class="card">
+            <h2>Frases</h2>
+            <p>«Me gusta volver, en ciertos momentos, a lugares donde fui feliz; me gusta moldear el presente una imagen y semejanza del pasado irrecuperable.»</p>
+               <p>— Fiódor Dostoievski, Noches blancas</p>
+        </div>
+    </main>
+    <script> 
+        const btn = document.getElementById("cambio-modo");
+        btn.addEventListener('click', ()=>{
+        document.body.classList.toggle('modo-oscuro');
+        btn.textContent= document.body.classList.contains('modo-oscuro')
+        ?'modo claro'
+        :'modo oscuro'
+        });
+    </script>
+</body>
+</html>

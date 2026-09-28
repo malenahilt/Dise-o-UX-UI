@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto integrador: Landing Page completa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== navbar ===== -->
+  <header class="navbar">
+    <div class="logo">logo</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#Nosotros"></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== hero ===== -->
+    <section id="hero" class="hero">
+      <div class="hero-contenido">
+        <h1>Te ayudamos a hacer crecer tu negocio</h1>
+        <p>Te brindamos soluciones digitales para ayudarte a que tu marca llegue más lejos.</p>
+        <a href="#contacto" class="btn btn-primario">Contactanos</a>
+      </div>
+    </section>
+
+    <!-- ===== servicios ===== -->
+    <section id="servicios" class="servicios">
+      <h2>Servicios que brindamos</h2>
+      <div class="grid-servicios">
+
+        <article class="servicio-card">
+          <div class="servicio-icono">Web</div>
+          <h3>Desarrollo Web</h3>
+          <p>Sitios rápidos, responsivos y adaptados a tu marca.</p>
+        </article>
+
+        <article class="servicio-card">
+          <div class="servicio-icono">Diseño</div>
+          <h3>Diseño UX/UI</h3>
+          <p>Interfaces claras que mejoran la experiencia de tus usuarios.</p>
+        </article>
+
+        <article class="servicio-card">
+          <div class="servicio-icono">Marketing</div>
+          <h3>Marketing Digital</h3>
+          <p>Estrategias de contenido y redes para atraer más clientes.</p>
+        </article>
+
+        <article class="servicio-card">
+          <div class="servicio-icono">Soporte</div>
+          <h3>Soporte Técnico</h3>
+          <p>Mantenimiento y acompañamiento continuo para tu sitio.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== testimonios (carrusel con scroll-snap) ===== -->
+    <section id="testimonios" class="testimonios">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="carrusel">
+
+        <article class="testimonio-card">
+          <p>"El equipo entendió exactamente lo que necesitábamos. Resultado impecable."</p>
+          <span class="testimonio-autor">— Persona 1</span>
+        </article>
+
+        <article class="testimonio-card">
+          <p>"Mejoramos nuestras ventas online un 40% en dos meses. Muy recomendable."</p>
+          <span class="testimonio-autor">— Persona 2</span>
+        </article>
+
+        <article class="testimonio-card">
+          <p>"Atención rápida y profesional en todo momento. Superó nuestras expectativas."</p>
+          <span class="testimonio-autor">— Persona 3</span>
+        </article>
+
+        <article class="testimonio-card">
+          <p>"El nuevo sitio quedó espectacular, y mucho más fácil de usar para nuestros clientes."</p>
+          <span class="testimonio-autor">— Persona 4</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== contacto ===== -->
+    <section id="contacto" class="contacto">
+      <h2>Contactanos</h2>
+      <form action="#" method="post" class="form-contacto">
+        <div class="campo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="campo">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primario">Enviar mensaje</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer===== -->
+  <footer class="footer">
+    <p>&copy; 2026 ErenyMale. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>

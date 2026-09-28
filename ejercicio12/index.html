@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        pasar el pulsor por
+        <span class="tooltip-contenedor">
+        esta palabra
+        <span class="tooltip-texto">Este es el texto informativo</span>
+        para que se vea el tooltip
+        </span>
+    </p>
+
+    <div style="height: 1500px;">
+        <p>para rellenar la pagina y poder scrolear para abajo al boton</p>
+    </div>
+    <button class="inicio" onclick="window.scrollTo({top:0, behavior:'smooth'})">ir arriba</button>
+</body>
+</html>

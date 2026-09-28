@@ -1,0 +1,286 @@
+/*1. Variables y reset*/
+:root {
+  --color-primario: #1a5276;
+  --color-secundario: #5dade2;
+  --color-fondo-claro: #f4f6f7;
+  --color-texto: #2c3e50;
+  --color-blanco: #ffffff;
+  --espaciado: 20px;
+  --radio-borde: 10px;
+  --fuente: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth; /* Scroll suave al hacer clic en los links del navbar */
+}
+
+body {
+  font-family: var(--fuente);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--color-primario);
+}
+
+/*2. navbar (Flexbox, position fixed)*/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--color-primario);
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--color-blanco);
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--color-blanco);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-secundario);
+}
+
+/*3. hero (imagen de fondo con animación)*/
+.hero {
+  height: 100vh;
+  margin-top: 0;
+  padding: 0 20px;
+  background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.7)),
+                     url(fondo.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-contenido {
+  color: var(--color-blanco);
+  max-width: 600px;
+  animation: aparecer 1s ease-out;
+}
+
+.hero-contenido h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.hero-contenido p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+/* Animación de aparición del contenido del hero */
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radio-borde);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primario {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario);
+}
+
+.btn-primario:active {
+  transform: scale(0.96);
+}
+
+/*4. Servicios (Grid)*/
+.servicios {
+  background-color: var(--color-fondo-claro);
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaciado);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.servicio-card {
+  background-color: var(--color-blanco);
+  padding: var(--espaciado);
+  border-radius: var(--radio-borde);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-6px);
+}
+
+.servicio-icono {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.servicio-card h3 {
+  margin-bottom: 10px;
+  color: var(--color-primario);
+}
+
+/*5. Testimonios (Carrusel con scroll-snap)*/
+.carrusel {
+  display: flex;
+  gap: var(--espaciado);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonio-card {
+  flex: 0 0 280px;
+  scroll-snap-align: center;
+  background-color: var(--color-fondo-claro);
+  padding: var(--espaciado);
+  border-radius: var(--radio-borde);
+  border-left: 4px solid var(--color-secundario);
+}
+
+.testimonio-card p {
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.testimonio-autor {
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+/*6. Contacto(Flexbox)*/
+.form-contacto {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado);
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #ccc;
+  border-radius: var(--radio-borde);
+  font-family: inherit;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+}
+
+/*7. Footer*/
+.footer {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 20px;
+}
+
+/*8. Media queries (Desktop-first)*/
+
+/* Breakpoint 1: Tablets */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero {
+    height: 80vh;
+    margin-top: 90px; /* Compensa el navbar que ahora es más alto */
+  }
+
+  .hero-contenido h1 {
+    font-size: 2em;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+}
+
+/* Breakpoint 2: Celulares */
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-contenido h1 {
+    font-size: 1.6em;
+  }
+
+  .hero-contenido p {
+    font-size: 1em;
+  }
+
+  .testimonio-card {
+    flex-basis: 240px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}

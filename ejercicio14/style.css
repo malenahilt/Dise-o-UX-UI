@@ -1,0 +1,43 @@
+:root {
+  --color-primario: #1a5276;
+  --color-secundario: #d6eaf8;
+  --color-texto: #030303;
+  --color-fondo: #ffffff;
+  --espaciado:15px
+}
+
+/* Modo oscuro: se activa agregando la clase "modo-oscuro" al body */
+.modo-oscuro {
+  --color-primario: #5dade2;
+  --color-secundario: #2c3e50;
+  --color-texto: #ecf0f1;
+  --color-fondo: #1c2833;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: var(--espaciado);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espaciado);
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.card {
+  background-color: var(--color-secundario);
+  padding: var(--espaciado);
+  border: 1px solid var(--color-primario);
+}
+
+.boton {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 10px 18px;
+}

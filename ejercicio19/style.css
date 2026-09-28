@@ -1,0 +1,165 @@
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 40px;
+}
+
+.formulario-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radios ocultos, pero accesibles por teclado */
+.paso-radio {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* ===== Indicador de progreso ===== */
+.indicador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 8px;
+}
+
+.punto {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d6eaf8;
+  color: #1a5276;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.linea {
+  width: 60px;
+  height: 3px;
+  background-color: #d6eaf8;
+}
+
+/* ===== Contenedor de pasos: se desliza horizontalmente ===== */
+form {
+  display: flex;
+  width: 200%;
+  transition: transform 0.4s ease;
+}
+
+.paso {
+  width: 50%;
+  flex-shrink: 0;
+  padding: 0 5px;
+}
+
+.paso h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.2em;
+}
+
+/* Cuando paso1 está tildado: mostrar paso 1 */
+#paso1:checked ~ form {
+  transform: translateX(0%);
+}
+
+/* Cuando paso2 está tildado: deslizar para mostrar paso 2 */
+#paso2:checked ~ form {
+  transform: translateX(-50%);
+}
+
+/* Resaltar el punto del paso activo */
+#paso1:checked ~ .indicador label[for="paso1"],
+#paso2:checked ~ .indicador label[for="paso2"] {
+  background-color: #1a5276;
+  color: white;
+}
+
+/* ===== Campos del formulario ===== */
+.campo {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.mensaje-error {
+  display: none;
+  color: #da3826;
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+/* ===== Validación nativa: :required ===== */
+input:required {
+  border-left: 4px solid #1a5276;
+}
+
+/* ===== Validación: :invalid (solo si el usuario ya escribió algo) ===== */
+input:not(:placeholder-shown):invalid {
+  border-color: #c0392b;
+  background-color: #fdedec;
+}
+
+input:not(:placeholder-shown):invalid ~ .mensaje-error {
+  display: block;
+}
+
+/* ===== Validación: :valid ===== */
+input:not(:placeholder-shown):valid {
+  border-color: #27ae60;
+  background-color: #eafaf1;
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-siguiente,
+.btn-enviar {
+  background-color: #1a5276;
+  color: white;
+}
+
+.btn-siguiente:hover,
+.btn-enviar:hover {
+  background-color: #154360;
+}
+
+.btn-volver {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  margin-right: 10px;
+}
+
+.btn-volver:hover {
+  background-color: #d5dbdb;
+}

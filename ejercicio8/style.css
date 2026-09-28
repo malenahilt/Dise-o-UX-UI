@@ -1,0 +1,25 @@
+*{box-sizing: border-box;
+
+}
+
+.navegador{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.logo{
+    background-color: rgb(42, 72, 241);
+    font-size: 2em;
+font-weight: bold;
+}
+
+.nav-link{
+    display: flex;
+    gap: 10px;
+}
+
+.nav-link a{
+    font-size: 1em;
+}
